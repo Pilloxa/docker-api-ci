@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+// Increments version, tags and pushes to Github
+
+const { execSync } = require("child_process");
+const currentTag = execSync("git tag")
+  .toString()
+  .trim()
+  .split("\n")
+  .map(s => parseInt(s.substr(1)))
+  .reverse()
+  .sort()
+  .slice(-1)[0];
+const nextVersion = currentTag + 1;
+const nextTag = `v${nextVersion}`;
+console.log(`Tagging ${nextTag}`);
+execSync(`git tag ${nextTag}`);
+console.log("Pushing to remote");
+execSync("git push origin master --follow-tags");
