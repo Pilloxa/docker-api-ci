@@ -2,7 +2,7 @@
 # It is pushed to dockerhub, image looveh/api-ci
 # See here for instructions on usage: https://circleci.com/docs/2.0/custom-images/
 
-FROM openjdk-8-lein-2.9.1
+FROM circleci/clojure:openjdk-8-lein-2.9.1
 
 WORKDIR /tmp
 
