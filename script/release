@@ -16,4 +16,5 @@ const nextTag = `v${nextVersion}`;
 console.log(`Tagging ${nextTag}`);
 execSync(`git tag ${nextTag}`);
 console.log("Pushing to remote");
-execSync("git push origin master --follow-tags");
+execSync("git push -u origin master");
+execSync("git push -u origin --tags");
