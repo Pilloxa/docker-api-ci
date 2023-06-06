@@ -2,7 +2,7 @@
 # It is pushed to dockerhub, image pilloxa/docker-api-ci
 # https://cloud.docker.com/u/pilloxa/repository/docker/pilloxa/docker-api-ci
 
-FROM circleci/clojure:openjdk-8-lein-2.9.1
+FROM circleci/clojure:openjdk-11-lein-2.9.8
 
 RUN lein --version
 
