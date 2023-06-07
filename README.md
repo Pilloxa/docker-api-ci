@@ -13,4 +13,4 @@ script/release
 ```
 docker build -t pilloxa/docker-api-ci:VERSION .
 ```
-Replace VERSION with the needed version of the image
+Replace VERSION with the corresponding version of the github tag
