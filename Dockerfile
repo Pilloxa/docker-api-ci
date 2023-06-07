@@ -8,7 +8,9 @@ RUN lein --version
 
 USER root
 RUN apt-get update
-RUN apt-get install -y python3
+RUN apt-get install -y python3  \
+    python3-distutils
+
 RUN python3 --version
 USER circleci
 

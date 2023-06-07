@@ -3,14 +3,13 @@
 // Increments version, tags and pushes to Github
 
 const { execSync } = require("child_process");
-const currentTag = execSync("git tag")
-  .toString()
-  .trim()
-  .split("\n")
-  .map(s => parseInt(s.substr(1)))
-  .reverse()
-  .sort()
-  .slice(-1)[0];
+const tagsList = execSync("git tag")
+                   .toString()
+                   .trim()
+                   .split("\n")
+                   .map(s => parseInt(s.substr(1)))
+const currentTag = Math.max(...tagsList);
+console.log(`Current tag is: ${currentTag}`);
 const nextVersion = currentTag + 1;
 const nextTag = `v${nextVersion}`;
 console.log(`Tagging ${nextTag}`);
