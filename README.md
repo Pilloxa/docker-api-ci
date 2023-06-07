@@ -1,8 +1,8 @@
 # Docker image for Pilloxa CI
 
-## To release
+## To create a git tag
 
-Commit all changes then
+Commit all changes then run:
 
 ```
 script/release
@@ -10,6 +10,7 @@ script/release
 
 ## To build
 
+On master branch make sure there are no changes and run:
 ```
 docker build -t pilloxa/docker-api-ci:VERSION .
 ```
